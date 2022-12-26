@@ -6,7 +6,7 @@ namespace WbDbServer.DataBase
     class DbConnection
     {
 
-        static readonly OracleConnection conn = new OracleConnection(@"DATA SOURCE = 127.0.0.1:1521/lb3;PASSWORD=111;PERSIST SECURITY INFO=True;USER ID = TEST");
+        static readonly OracleConnection conn = new OracleConnection(@"DATA SOURCE = 192.168.88.252:1521/lb3;PASSWORD=111;PERSIST SECURITY INFO=True;USER ID = TEST");
         public static OracleConnection Connection
         {
             get
