@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WbDbServer.Models
+namespace WebDbLib
 {
     internal class HotelType
     {

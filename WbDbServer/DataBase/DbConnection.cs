@@ -1,7 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 
 
-namespace WbDbServer.DataBase
+namespace WebDbServer.DataBase
 {
     class DbConnection
     {

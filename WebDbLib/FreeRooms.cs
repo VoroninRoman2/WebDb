@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WbDbServer.Models
+namespace WebDbLib
 {
     internal class FreeRooms
     {
@@ -12,9 +12,9 @@ namespace WbDbServer.Models
         public int HotelId { get; set; }
         public int RoomNumber { get; set; }
         public int Price { get; set; }
-        public FreeRooms(int id,int hotelId,int rooms, int price)
+        public FreeRooms(int id, int hotelId, int rooms, int price)
         {
-            Id= id;
+            Id = id;
             HotelId = hotelId;
             RoomNumber = rooms;
             Price = price;

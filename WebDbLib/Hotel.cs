@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WbDbServer.Models
+namespace WebDbLib
 {
     internal class Hotel
     {
@@ -21,7 +21,7 @@ namespace WbDbServer.Models
             AreaId = areaId;
             TypeId = typeId;
         }
-        public Hotel( string name, int areaId, int typeId)
+        public Hotel(string name, int areaId, int typeId)
         {
             Name = name;
             AreaId = areaId;

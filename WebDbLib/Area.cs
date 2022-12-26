@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WbDbServer.Models
+namespace WebDbLib
 {
     internal class Area
     {
@@ -16,7 +16,7 @@ namespace WbDbServer.Models
             Id = id;
             AreaName = name;
         }
-        public Area( string name)
+        public Area(string name)
         {
             AreaName = name;
         }

@@ -4,21 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WbDbServer.Models
+namespace WebDbLib
 {
-    internal class Area
+    public class HotelType
     {
         public int Id { get; set; }
-        public string AreaName { get; set; }
+        public string Type { get; set; }
 
-        public Area(int id, string name)
+        public HotelType(int id, string name)
         {
             Id = id;
-            AreaName = name;
+            Type = name;
         }
-        public Area( string name)
+        public HotelType(string name)
         {
-            AreaName = name;
+            Type = name;
         }
     }
 }
