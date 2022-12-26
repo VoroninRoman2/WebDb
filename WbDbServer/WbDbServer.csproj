@@ -78,6 +78,10 @@
   <ItemGroup>
     <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DataBase\DbConnection.cs" />
+    <Compile Include="Models\Area.cs" />
+    <Compile Include="Models\FreeRooms.cs" />
+    <Compile Include="Models\Hotel.cs" />
+    <Compile Include="Models\HotelType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -93,7 +97,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logs\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.0\build\System.Text.Json.targets')" />
