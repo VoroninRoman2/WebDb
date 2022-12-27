@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Data;
-using System.Data.OracleClient;
 using System.IO;
 using System.Windows.Forms;
 using WebDbClient.ServerConnection;

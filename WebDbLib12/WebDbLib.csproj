@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Area.cs" />
-    <Compile Include="FreeRooms.cs" />
+    <Compile Include="FreeRoom.cs" />
     <Compile Include="Hotel.cs" />
     <Compile Include="HotelType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
