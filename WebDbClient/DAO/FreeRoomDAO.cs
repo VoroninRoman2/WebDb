@@ -65,7 +65,7 @@ namespace WebDbClient.DAO
 
         public void Insert(FreeRoom obj)
         {
-            string comm = $"Insert Into FreeRoom (HotelId, RoomNumber,Price) Values ({obj.HotelId},{obj.RoomNumber},{obj.Price})";
+            string comm = $"Insert Into FreeRoom (HotelId, RoomNumber,Price) Values ('{obj.HotelId}','{obj.RoomNumber}',{obj.Price})";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);

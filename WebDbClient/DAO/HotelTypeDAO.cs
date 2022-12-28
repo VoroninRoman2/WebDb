@@ -11,7 +11,7 @@ namespace WebDbClient.DAO
     {
         public void DeleteById(int id)
         {
-            string comm = $"Delete From HotelType Where id ={id}";
+            string comm = $"Delete From HotelType Where id ='{id}'";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
@@ -45,7 +45,7 @@ namespace WebDbClient.DAO
 
         public HotelType GetbyId(int id)
         {
-            string comm = $"Select * From HotelType Where id={id}";
+            string comm = $"Select * From HotelType Where id='{id}'";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
@@ -65,7 +65,7 @@ namespace WebDbClient.DAO
 
         public void Insert(HotelType obj)
         {
-            string comm = $"Insert Into HotelType (Type) Values ({obj.Type})";
+            string comm = $"Insert Into HotelType (Type) Values ('{obj.Type}')";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
@@ -79,7 +79,7 @@ namespace WebDbClient.DAO
 
         public void Update(HotelType obj)
         {
-            string comm = $"Update HotelType Set Type= '{obj.Type}' Where id ={obj.Id}";
+            string comm = $"Update HotelType Set Type= '{obj.Type}' Where id ='{obj.Id}'";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);

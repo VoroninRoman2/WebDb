@@ -65,7 +65,7 @@ namespace WebDbClient.DAO
 
         public void Insert(Area obj)
         {
-            string comm = $"Insert Into Area (Type) Values ({obj.Name})";
+            string comm = $"Insert Into Area (Type) Values ('{obj.Name}')";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);

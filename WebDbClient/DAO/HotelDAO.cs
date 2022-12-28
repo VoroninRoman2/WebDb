@@ -7,11 +7,11 @@ using WebDbLib;
 
 namespace WebDbClient.DAO
 {
-    internal class HoteDAO : IDAO<Hotel>
+    internal class HotelDAO : IDAO<Hotel>
     {
         public void DeleteById(int id)
         {
-            string comm = $"Delete From Hotel Where id ={id}";
+            string comm = $"Delete From Hotel Where id ='{id}'";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
@@ -26,26 +26,23 @@ namespace WebDbClient.DAO
         public DataTable GetAll()
         {
             string comm = $"Select Hotel.id, Hotel.Name, Area.Name, HotelType.Type From Hotel Inner Join Area On Hotel.AreaId=Area.Id Inner Join HotelType On Hotel.AreaId=HotelType.Id ";
-            using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
-            {
+            StreamWriter writer = new StreamWriter(Connection.Client.GetStream());
                 writer.WriteLine(comm);
-            }
-            using (StreamReader reader = new StreamReader(Connection.Client.GetStream()))
-            {
-                string line = reader.ReadLine();
-                if (line == "0")
-                {
-                    MessageBox.Show("Faild to get", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return new DataTable();
-                }
-                else
-                    return (DataTable)JsonConvert.DeserializeObject(line, typeof(DataTable));
-            }
+                StreamReader reader = new StreamReader(Connection.Client.GetStream());
+                    string line = reader.ReadLine();
+                    if (line == "0")
+                    {
+                        MessageBox.Show("Faild to get", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return new DataTable();
+                    }
+                    else
+                        return (DataTable)JsonConvert.DeserializeObject(line, typeof(DataTable));
+            
         }
 
         public Hotel GetbyId(int id)
         {
-            string comm = $"Select Hotel.id, Hotel.Name, Area.Name, HotelType.Type From Hotel Inner Join Area On Hotel.AreaId=Area.Id Inner Join HotelType On Hotel.AreaId=HotelType.Id Where Hotel.id =1";
+            string comm = $"Select Hotel.id, Hotel.Name, Area.Name, HotelType.Type From Hotel Inner Join Area On Hotel.AreaId=Area.Id Inner Join HotelType On Hotel.AreaId=HotelType.Id Where Hotel.id ='{id}'";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
@@ -65,7 +62,7 @@ namespace WebDbClient.DAO
 
         public void Insert(Hotel obj)
         {
-            string comm = $"Insert Into Hotel (Name, AreaId,TypeId) Values ({obj.Name},{obj.AreaId},{obj.TypeId})";
+            string comm = $"Insert Into Hotel (Name, AreaId,TypeId) Values ('{obj.Name}','{obj.AreaId}','{obj.TypeId}')";
             using (StreamWriter writer = new StreamWriter(Connection.Client.GetStream()))
             {
                 writer.WriteLine(comm);
